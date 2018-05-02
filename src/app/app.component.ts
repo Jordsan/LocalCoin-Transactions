@@ -8,15 +8,11 @@ import { Observable } from 'rxjs/Observable';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
     transactions: Observable<any[]>;
 
     constructor(private transactionService: TransactionService) {
         this.transactions = this.transactionService.getData();
-    }
-
-    ngOnInit(): void {
-        console.log(this.transactionService.getData());
     }
 }
